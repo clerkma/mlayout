@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 2016 Clerk Ma (clerkma@gmail.com)
+  Copyright (C) 2017 Clerk Ma
 
   This file is part of mlayout.
 */
