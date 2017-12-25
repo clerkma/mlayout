@@ -1,2 +1,2 @@
 # mlayout
-Portable layout engine in C.
+Portable font layout engine in C.
