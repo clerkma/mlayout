@@ -7,7 +7,7 @@ typedef struct {
   uint16_t attach_list_offset;
   uint16_t lig_caret_list_offset;
   uint16_t mark_attach_class_def_offset;
-} ot_gdef_f10;
+} gdef_header_f10;
 
 typedef struct {
   uint16_t major_version;
@@ -17,7 +17,7 @@ typedef struct {
   uint16_t lig_caret_list_offset;
   uint16_t mark_attach_class_def_offset;
   uint16_t mark_glyph_set_def_offset;
-} ot_gdef_f12;
+} gdef_header_f12;
 
 typedef struct {
   uint16_t major_version;
@@ -28,7 +28,7 @@ typedef struct {
   uint16_t mark_attach_class_def_offset;
   uint16_t mark_glyph_set_def_offset;
   uint32_t item_var_store_offset;
-} ot_gdef_f13;
+} gdef_header_f13;
 
 /* Attachment Point List Table */
 
