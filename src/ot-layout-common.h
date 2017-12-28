@@ -73,14 +73,100 @@ typedef struct {
 
 /* Coverage Table */
 
+typedef struct {
+  uint16_t coverage_format;
+  uint16_t glyph_count;
+  uint16_t * glyph_array;
+} otl_coverage_f1;
+
+typedef struct {
+  uint16_t start_glyph_id;
+  uint16_t end_glyph_id;
+  uint16_t start_coverage_index;
+} otl_range_record;
+
+typedef struct {
+  uint16_t coverage_format;
+  uint16_t range_count;
+  otl_range_record * range_records;
+} otl_coverage_f2;
+
 /* Class Definition Table */
+
+typedef struct {
+  uint16_t class_format;
+  uint16_t start_glyph_id;
+  uint16_t glyph_count;
+  uint16_t * class_value_array;
+} otl_class_def_f1;
+
+typedef struct {
+  uint16_t start_glyph_id;
+  uint16_t end_glyph_id;
+  uint16_t gclass;
+} otl_class_range_record;
+
+typedef struct {
+  uint16_t class_format;
+  uint16_t class_range_count;
+  otl_class_range_record * class_range_records;
+} otl_class_def_f2;
 
 /* Device and VariationIndex Tables */
 
+typedef struct {
+  uint16_t start_size;
+  uint16_t end_size;
+  uint16_t delta_format;
+  uint16_t * delate_value;
+} otl_device;
+
+typedef struct {
+  uint16_t delta_set_outer_index;
+  uint16_t delta_set_inner_index;
+  uint16_t delta_format;
+} otl_variation_index;
+
 /* FeatureVariations Table */
+
+typedef struct {
+  uint32_t condition_set_offset;
+  uint32_t feature_table_substitution_offset;
+} otl_feature_variations_record;
+
+typedef struct {
+  uint16_t major_version;
+  uint16_t minor_version;
+  uint32_t feature_variations_record_count;
+  otl_feature_variations_record * feature_variations_records;
+} otl_feature_variations;
 
 /* ConditionSet Table */
 
+typedef struct {
+  uint16_t condition_count;
+  uint32_t conditions;
+} otl_condition_set;
+
 /* Condition Table */
 
+typedef struct {
+  uint16_t format;
+  uint16_t axis_index;
+  uint16_t filter_range_min_value;
+  uint16_t filter_range_max_value;
+} otl_condition_table_f1;
+
 /* FeatureTableSubstitution Table */
+
+typedef struct {
+  uint16_t feature_index;
+  uint32_t alternate_feature_table;
+} otl_feature_table_substitution_record;
+
+typedef struct {
+  uint16_t major_version;
+  uint16_t minor_version;
+  uint16_t substitution_count;
+  otl_feature_table_substitution_record * substitutions;
+} otl_feature_table_substitution;
